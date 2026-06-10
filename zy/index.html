@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الحجاز لمعدات السباكة | لوحة التحكم</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="admin-wrapper">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <i class="fas fa-wrench"></i>
+        <span>لوحة التحكم</span>
+      </div>
+      <nav class="sidebar-nav">
+        <ul>
+          <li><a href="index.html" class="active"><i class="fas fa-chart-pie"></i> <span>الإحصائيات</span></a></li>
+          <li><a href="pages/products.html"><i class="fas fa-box"></i> <span>المنتجات</span></a></li>
+          <li><a href="pages/orders.html"><i class="fas fa-shopping-cart"></i> <span>الطلبيات</span></a></li>
+          <li><a href="pages/settings.html"><i class="fas fa-cog"></i> <span>الإعدادات</span></a></li>
+        </ul>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="../zx/index.html" class="back-to-site"><i class="fas fa-external-link-alt"></i> العودة للموقع</a>
+      </div>
+    </aside>
+
+    <main class="admin-main">
+      <header class="admin-topbar glass">
+        <button class="sidebar-toggle" id="sidebarToggle"><i class="fas fa-bars"></i></button>
+        <div class="topbar-left">
+          <div class="admin-search">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="بحث...">
+          </div>
+        </div>
+        <div class="topbar-right">
+          <div class="admin-notif">
+            <i class="fas fa-bell"></i>
+            <span class="notif-badge">3</span>
+          </div>
+          <div class="admin-user">
+            <div class="user-avatar"><i class="fas fa-user-shield"></i></div>
+            <div class="user-info">
+              <span class="user-name">الإدارة</span>
+              <span class="user-role">مدير النظام</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="admin-content">
+        <div class="page-header">
+          <h1>لوحة الإحصائيات</h1>
+          <p>نظرة عامة على أداء المتجر</p>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card glass">
+            <div class="stat-icon" style="background: rgba(40,196,255,0.15); color: #28c4ff;"><i class="fas fa-box"></i></div>
+            <div class="stat-info">
+              <span class="stat-value" id="statProducts">0</span>
+              <span class="stat-label">إجمالي المنتجات</span>
+            </div>
+          </div>
+          <div class="stat-card glass">
+            <div class="stat-icon" style="background: rgba(99,226,255,0.15); color: #63e2ff;"><i class="fas fa-shopping-cart"></i></div>
+            <div class="stat-info">
+              <span class="stat-value" id="statOrders">0</span>
+              <span class="stat-label">الطلبيات</span>
+            </div>
+          </div>
+          <div class="stat-card glass">
+            <div class="stat-icon" style="background: rgba(255,210,92,0.15); color: #ffd25c;"><i class="fas fa-users"></i></div>
+            <div class="stat-info">
+              <span class="stat-value" id="statUsers">0</span>
+              <span class="stat-label">العملاء</span>
+            </div>
+          </div>
+          <div class="stat-card glass">
+            <div class="stat-icon" style="background: rgba(76,217,100,0.15); color: #4cd964;"><i class="fas fa-dollar-sign"></i></div>
+            <div class="stat-info">
+              <span class="stat-value" id="statRevenue">0</span>
+              <span class="stat-label">الإيرادات</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="charts-grid">
+          <div class="chart-card glass">
+            <h3><i class="fas fa-chart-bar"></i> المبيعات الشهرية</h3>
+            <canvas id="salesChart"></canvas>
+          </div>
+          <div class="chart-card glass">
+            <h3><i class="fas fa-chart-doughnut"></i> توزيع المنتجات</h3>
+            <canvas id="productsChart"></canvas>
+          </div>
+        </div>
+
+        <div class="table-card glass">
+          <div class="table-header">
+            <h3><i class="fas fa-clock"></i> آخر الطلبيات</h3>
+            <a href="pages/orders.html" class="btn btn-sm">عرض الكل</a>
+          </div>
+          <div class="table-responsive">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>العميل</th>
+                  <th>المنتج</th>
+                  <th>التاريخ</th>
+                  <th>الحالة</th>
+                  <th>المبلغ</th>
+                </tr>
+              </thead>
+              <tbody id="ordersTableBody">
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

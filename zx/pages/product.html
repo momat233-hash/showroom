@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تفاصيل المنتج | الحجاز لمعدات السباكة</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <header class="main-header glass scrolled">
+    <div class="container header-inner">
+      <div class="logo">
+        <i class="fas fa-wrench"></i>
+        <span>الحجاز <small>لمعدات السباكة</small></span>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="../index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+          <li><a href="catalog.html" class="active"><i class="fas fa-th-large"></i> المنتجات</a></li>
+          <li><a href="about.html"><i class="fas fa-info-circle"></i> عن الشركة</a></li>
+          <li><a href="contact.html"><i class="fas fa-envelope"></i> اتصل بنا</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <section class="product-detail">
+    <div class="container">
+      <div class="detail-grid">
+        <div class="detail-image" id="productImage">
+          <i class="fas fa-tint"></i>
+        </div>
+        <div class="detail-info">
+          <div class="product-category" id="productCategory">خلاطات</div>
+          <h1 id="productName">خلاط ماء ذهبي</h1>
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span style="color:var(--text-secondary);margin-right:8px;font-size:0.85rem;">4.5 (45 تقييم)</span>
+          </div>
+          <p class="description" id="productDesc">خلاط ماء ذهبي فاخر مقاوم للصدأ بتصميم عصري يناسب جميع الحمامات العصرية. مصنوع من النحاس عالي الجودة ومطلي بالذهب اللامع.</p>
+          <div class="price-big" id="productPrice">299 ر.س</div>
+          <div class="qty-control">
+            <button class="qty-btn" onclick="changeQty(-1)"><i class="fas fa-minus"></i></button>
+            <span class="qty" id="qtyDisplay">1</span>
+            <button class="qty-btn" onclick="changeQty(1)"><i class="fas fa-plus"></i></button>
+          </div>
+          <button class="btn btn-primary btn-large" onclick="showToast('تمت إضافة المنتج إلى سلة التسوق بنجاح ✅')">
+            <i class="fas fa-shopping-cart"></i> أضف إلى السلة
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo"><i class="fas fa-wrench"></i> الحجاز لمعدات السباكة</div>
+          <p>وجهتك الأولى لمنتجات السباكة عالية الجودة في المملكة العربية السعودية.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>روابط سريعة</h4>
+          <ul>
+            <li><a href="catalog.html">المنتجات</a></li>
+            <li><a href="about.html">عن الشركة</a></li>
+            <li><a href="contact.html">اتصل بنا</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>تواصل معنا</h4>
+          <ul class="contact-list">
+            <li><i class="fas fa-phone"></i> +966 55 123 4567</li>
+            <li><i class="fas fa-envelope"></i> info@hijaz-plumbing.com</li>
+            <li><i class="fas fa-map-marker-alt"></i> جدة، المملكة العربية السعودية</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>جميع الحقوق محفوظة &copy; 2026 الحجاز لمعدات السباكة</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/app.js"></script>
+  <script>
+    var currentQty = 1;
+    function changeQty(delta) {
+      currentQty = Math.max(1, currentQty + delta);
+      document.getElementById('qtyDisplay').textContent = currentQty;
+    }
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var id = params.get('id');
+      if (id && typeof products !== 'undefined') {
+        var product = products.find(function (p) { return p.id == id; });
+        if (product) {
+          document.getElementById('productName').textContent = product.name;
+          document.getElementById('productCategory').textContent = product.category;
+          document.getElementById('productDesc').textContent = product.desc;
+          document.getElementById('productPrice').textContent = product.price + ' ر.س';
+          document.getElementById('productImage').innerHTML = '<i class="fas ' + product.image + '"></i>';
+        }
+      }
+    })();
+  </script>
+</body>
+</html>

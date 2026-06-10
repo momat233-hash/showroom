@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>المنتجات | الحجاز لمعدات السباكة</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <header class="main-header glass scrolled">
+    <div class="container header-inner">
+      <div class="logo">
+        <i class="fas fa-wrench"></i>
+        <span>الحجاز <small>لمعدات السباكة</small></span>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="../index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+          <li><a href="catalog.html" class="active"><i class="fas fa-th-large"></i> المنتجات</a></li>
+          <li><a href="about.html"><i class="fas fa-info-circle"></i> عن الشركة</a></li>
+          <li><a href="contact.html"><i class="fas fa-envelope"></i> اتصل بنا</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-banner">
+    <h1>جميع المنتجات</h1>
+    <p>تصفح مجموعتنا الكاملة من منتجات السباكة عالية الجودة</p>
+  </section>
+
+  <div class="catalog-controls">
+    <div class="container controls-inner">
+      <div class="search-box">
+        <i class="fas fa-search"></i>
+        <input type="text" id="searchInput" placeholder="ابحث عن منتج...">
+      </div>
+      <select class="filter-select" id="filterSelect">
+        <option value="">جميع الأقسام</option>
+        <option value="خلاطات">خلاطات</option>
+        <option value="مغاسل">مغاسل</option>
+        <option value="مراحيض">مراحيض</option>
+        <option value="أحواض">أحواض</option>
+        <option value="دش">دش</option>
+        <option value="فلاتر">فلاتر</option>
+        <option value="سخانات">سخانات</option>
+      </select>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="products-grid" id="allProducts"></div>
+    </div>
+  </section>
+
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo"><i class="fas fa-wrench"></i> الحجاز لمعدات السباكة</div>
+          <p>وجهتك الأولى لمنتجات السباكة عالية الجودة في المملكة العربية السعودية.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>روابط سريعة</h4>
+          <ul>
+            <li><a href="catalog.html">المنتجات</a></li>
+            <li><a href="about.html">عن الشركة</a></li>
+            <li><a href="contact.html">اتصل بنا</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>تواصل معنا</h4>
+          <ul class="contact-list">
+            <li><i class="fas fa-phone"></i> +966 55 123 4567</li>
+            <li><i class="fas fa-envelope"></i> info@hijaz-plumbing.com</li>
+            <li><i class="fas fa-map-marker-alt"></i> جدة، المملكة العربية السعودية</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>جميع الحقوق محفوظة &copy; 2026 الحجاز لمعدات السباكة</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/app.js"></script>
+</body>
+</html>
